@@ -9,6 +9,16 @@
       ],
       'conditions': [
         [ 'OS=="win"', {
+          
+          # tepez: this solves 
+          # fatal error LNK1181: cannot open input file 'kernel32.lib'
+    		  'msvs_settings': {
+  			    'VCLinkerTool': {
+				      'AdditionalLibraryDirectories': 'c:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Lib\\x64'
+			      }
+	        },
+          
+          
           'conditions': [
             # "openssl_root" is the directory on Windows of the OpenSSL files
             ['target_arch=="x64"', {
